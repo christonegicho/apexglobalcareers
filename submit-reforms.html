@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Submit Review - Apex Global Careers</title>
+  <link rel="icon" type="image/png" href="logo.png">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to bottom right, #001f4d, #003366);
+      color: white;
+      margin: 0;
+      padding: 0;
+    }
+    .review-container {
+      max-width: 600px;
+      margin: 80px auto;
+      background: rgba(255, 255, 255, 0.08);
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+      animation: fadeIn 1s ease-in-out;
+    }
+    .review-container h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 28px;
+      color: gold;
+    }
+    label {
+      font-weight: bold;
+      display: block;
+      margin: 15px 0 5px;
+    }
+    input, textarea, select {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-radius: 8px;
+      margin-bottom: 15px;
+      font-size: 16px;
+    }
+    button {
+      width: 100%;
+      background: gold;
+      color: #001f4d;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      font-size: 18px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    button:hover {
+      background: #ffcc00;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="review-container">
+    <h2>Submit Your Review</h2>
+    <form action="https://formspree.io/f/yourFormID" method="POST">
+      <label for="name">Your Name</label>
+      <input type="text" name="name" id="name" placeholder="Enter your name" required>
+
+      <label for="rating">Rating</label>
+      <select name="rating" id="rating" required>
+        <option value="">Select rating</option>
+        <option>⭐⭐⭐⭐⭐ - Excellent</option>
+        <option>⭐⭐⭐⭐ - Very Good</option>
+        <option>⭐⭐⭐ - Good</option>
+        <option>⭐⭐ - Fair</option>
+        <option>⭐ - Poor</option>
+      </select>
+
+      <label for="review">Your Review</label>
+      <textarea name="review" id="review" rows="4" placeholder="Write your review..." required></textarea>
+
+      <button type="submit">Submit Review</button>
+    </form>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Client Reviews - Apex Global Careers</title>
+  <link rel="icon" type="image/x-icon" href="logo.png" />
+  <link rel="stylesheet" href="style.css">
+  
+</head>
+<body>
+    <!-- Navbar -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <img src="apex.jfif" alt="Apex Global Careers Logo">
+        <span>Apex Global Careers</span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="invest.html">Opportunities</a></li>
+        <li><a href="whatsapp.html">WhatsApp</a></li>
+        <li><a href="clients-review.html">Clients Review</a></li>
+        <li><a href="trading-classes.html">Training</a></li>
+        <li><a href="about-us.html">About Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+
+  <h1>What Our Clients Say</h1>
+
+  <div class="reviews">
+    <div class="review-card">
+      <h3>Sarah K.</h3>
+      <p>“Apex Global Careers connected me to my dream job in Canada. The process was smooth and professional.” ⭐⭐⭐⭐⭐</p>
+    </div>
+    <div class="review-card">
+      <h3>Michael B.</h3>
+      <p>“Their investment training boosted my portfolio returns by 40% in one year. Highly recommend!” ⭐⭐⭐⭐⭐</p>
+    </div>
+    <div class="review-card">
+      <h3>Linda W.</h3>
+      <p>“I never thought I’d work abroad, but Apex made it happen seamlessly.” ⭐⭐⭐⭐⭐</p>
+    </div>
+  </div>
+
+  <button class="btn" id="openModal">Submit Your Review</button>
+
+  <!-- Modal -->
+  <div class="modal" id="reviewModal">
+    <div class="modal-content">
+      <span class="close-btn" id="closeModal">X</span>
+      <h2>Submit Your Review</h2>
+      <input type="text" placeholder="Your Name" required>
+      <textarea placeholder="Your Review" rows="4" required></textarea>
+      <select>
+        <option>⭐⭐⭐⭐⭐</option>
+        <option>⭐⭐⭐⭐</option>
+        <option>⭐⭐⭐</option>
+        <option>⭐⭐</option>
+        <option>⭐</option>
+      </select>
+      <button class="btn">Send Review</button>
+    </div>
+  </div>
+
+  <script>
+    const modal = document.getElementById("reviewModal");
+    const openBtn = document.getElementById("openModal");
+    const closeBtn = document.getElementById("closeModal");
+
+    openBtn.onclick = () => modal.style.display = "flex";
+    closeBtn.onclick = () => modal.style.display = "none";
+    window.onclick = (e) => { if (e.target === modal) modal.style.display = "none"; }
+  </script>
+
+</body>
+</html>

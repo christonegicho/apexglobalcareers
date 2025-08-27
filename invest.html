@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Global Investment Opportunities - Apex Global Careers</title>
+  <link rel="icon" type="image/png" href="apexi.png">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <nav class="navbar">
+    <div class="logo">
+      <img src="apexi.png" alt="Apex Global Careers Logo">
+      <span>Apex Global Careers</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="opportunities.html" class="active">Opportunities</a></li>
+      <li><a href="whatsapp.html">WhatsApp</a></li>
+      <li><a href="clients-review.html">Clients Review</a></li>
+      <li><a href="trading-classes.html">Training</a></li>
+      <li><a href="about-us.html">About Us</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="investment-section">
+  <h1>Global Investment Opportunities</h1>
+  <p>Unlock your potential through career and financial growth worldwide.</p>
+
+  <div class="investment-grid">
+  <div class="investment-card" onclick="openModal('career')">
+    <div class="icon-circle">
+      <img src="career.png" alt="Career Icon">
+    </div>
+    <h2>Career Investments</h2>
+    <p>Explore education, training, and relocation support.</p>
+  </div>
+  
+  <div class="investment-card" onclick="openModal('financial')">
+    <div class="icon-circle">
+      <img src="financial.png" alt="Finance Icon">
+    </div>
+    <h2>Financial Investments</h2>
+    <p>Discover real estate, trading, and sustainable ventures.</p>
+  </div>
+</div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Modal -->
+<div id="opportunityModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <h2 id="modalTitle"></h2>
+    <ul id="modalList"></ul>
+  </div>
+</div>
+
+<!-- JS Inline -->
+<script>
+const data = {
+  career: {
+    title: "Career Investments",
+    items: [
+      { text: "Education abroad (universities, certifications)", link: "#" },
+      { text: "Professional training packages", link: "#" },
+      { text: "Relocation support & consultancy", link: "#" },
+      { text: "Student loan & scholarship info", link: "#" },
+      { text: "Global job placement programs", link: "#" }
+    ]
+  },
+  financial: {
+    title: "Financial Investments",
+    items: [
+      { text: "Real estate in stable global markets", link: "#" },
+      { text: "Safe trading & portfolio diversification", link: "#" },
+      { text: "Partner businesses & ventures abroad", link: "#" },
+      { text: "Advisory services for sustainable wealth growth", link: "#" },
+      { text: "International tax & legal consultancy", link: "#" }
+    ]
+  }
+};
+
+function openModal(type) {
+  const modal = document.getElementById("opportunityModal");
+  document.getElementById("modalTitle").textContent = data[type].title;
+  const list = document.getElementById("modalList");
+  list.innerHTML = "";
+
+  data[type].items.forEach((item, index) => {
+    const li = document.createElement("li");
+    li.textContent = item.text;
+    li.onclick = () => window.location.href = item.link;
+    li.style.opacity = "0";
+    li.style.transform = "translateY(15px)";
+    list.appendChild(li);
+
+    setTimeout(() => {
+      li.style.opacity = "1";
+      li.style.transform = "translateY(0)";
+      li.style.transition = "opacity 0.5s ease, transform 0.5s ease";
+    }, index * 200);
+  });
+
+  modal.style.display = "flex";
+}
+
+function closeModal() {
+  document.getElementById("opportunityModal").style.display = "none";
+}
+</script>
+
+</body>
+</html>

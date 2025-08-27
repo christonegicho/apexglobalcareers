@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Global Investment Opportunities - Apex Global Careers</title>
+  <link rel="icon" type="image/png" href="apexi.png">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="oppor.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <nav class="navbar">
+    <div class="logo">
+      <img src="apexi.png" alt="Apex Global Careers Logo">
+      <span>Apex Global Careers</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="opportunities.html" class="active">Opportunities</a></li>
+      <li><a href="whatsapp.html">WhatsApp</a></li>
+      <li><a href="clients-review.html">Clients Review</a></li>
+      <li><a href="trading-classes.html">Training</a></li>
+      <li><a href="about-us.html">About Us</a></li>
+    </ul>
+  </nav>
+</header>
+
+
+
+<!-- CV & Interview Section -->
+<section class="resources-section">
+    <h2>📄 CV Building & Interview Prep</h2>
+
+    <!-- Resume Generator Form -->
+    <div class="resume-form">
+        <h2>Create Your Resume</h2>
+        <input type="text" id="name" placeholder="Full Name">
+        <input type="email" id="email" placeholder="Email">
+        <input type="text" id="phone" placeholder="Phone Number">
+        <textarea id="summary" placeholder="Professional Summary"></textarea>
+        <input type="text" id="education" placeholder="Education">
+        <input type="text" id="experience" placeholder="Work Experience">
+        <input type="text" id="skills" placeholder="Key Skills (comma separated)">
+        <button class="btn" onclick="generateResume()">Generate Resume</button>
+        <button class="btn" id="downloadBtn" style="display:none;" onclick="downloadResume()">Download as PDF</button>
+    </div>
+
+    <!-- Resume Preview -->
+    <div class="resume-preview" id="resumePreview"></div>
+</section>
+
+<!-- Extra Resources -->
+<section class="resources-section">
+    <h2>🌐 International Job Seeker Tools</h2>
+    <div class="resources-grid">
+        <div class="resource-card">
+            <img src="https://source.unsplash.com/400x250/?globe" alt="Visa">
+            <h3>Work Visa Guides</h3>
+            <p>Step-by-step visa application guides for top job markets like Canada, UK, and Australia.</p>
+            <a href="#">Explore Guides →</a>
+        </div>
+        <div class="resource-card">
+            <img src="https://source.unsplash.com/400x250/?teamwork" alt="Networking">
+            <h3>Global Networking Groups</h3>
+            <p>Join online communities to connect with employers and other job seekers.</p>
+            <a href="#">Join a Group →</a>
+        </div>
+        <div class="resource-card">
+            <img src="https://source.unsplash.com/400x250/?language" alt="Language Learning">
+            <h3>Language Learning</h3>
+            <p>Free resources to learn job-relevant languages like English, French, and German.</p>
+            <a href="#">Start Learning →</a>
+        </div>
+    </div>
+</section>
+
+<!-- jsPDF Library for PDF Export -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+<!-- Resume Generator JS -->
+<script>
+function generateResume() {
+  const name = document.getElementById("name").value;
+  const email = document.getElementById("email").value;
+  const phone = document.getElementById("phone").value;
+  const summary = document.getElementById("summary").value;
+  const education = document.getElementById("education").value;
+  const experience = document.getElementById("experience").value;
+  const skills = document.getElementById("skills").value.split(",");
+
+  const resumeHTML = `
+    <h2>${name}</h2>
+    <p><strong>Email:</strong> ${email} | <strong>Phone:</strong> ${phone}</p>
+    <h3>Summary</h3>
+    <p>${summary}</p>
+    <h3>Education</h3>
+    <p>${education}</p>
+    <h3>Experience</h3>
+    <p>${experience}</p>
+    <h3>Skills</h3>
+    <ul>${skills.map(skill => `<li>${skill.trim()}</li>`).join("")}</ul>
+  `;
+
+  document.getElementById("resumePreview").innerHTML = resumeHTML;
+  document.getElementById("downloadBtn").style.display = "inline-block";
+}
+
+function downloadResume() {
+  const { jsPDF } = window.jspdf;
+  const doc = new jsPDF();
+  const resumeContent = document.getElementById("resumePreview").innerText;
+
+  doc.text(resumeContent, 10, 10);
+  doc.save("resume.pdf");
+}
+</script>
+
+</body>
+</html>

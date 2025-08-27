@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Global Investment Opportunities - Apex Global Careers</title>
+  <link rel="icon" type="image/png" href="apexi.png">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Your global CSS -->
+  <link rel="stylesheet" href="style.css">
+  <!-- Page-specific overrides/additions -->
+  <link rel="stylesheet" href="oppor.css">
+</head>
+<body>
+
+<header>
+  <nav class="navbar">
+    <div class="logo">
+      <img src="apexi.png" alt="Apex Global Careers Logo">
+      <span>Apex Global Careers</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="opportunities.html" class="active">Opportunities</a></li>
+      <li><a href="whatsapp.html">WhatsApp</a></li>
+      <li><a href="clients-review.html">Clients Review</a></li>
+      <li><a href="trading-classes.html">Trading Classes</a></li>
+      <li><a href="about-us.html">About Us</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- Search -->
+<div class="search-container">
+  <input type="text" id="search" placeholder="Search jobs by title, location, or company...">
+</div>
+
+<!-- Category Filters -->
+<div class="filter-container">
+  <button class="filter-btn active" data-category="all">All</button>
+  <button class="filter-btn" data-category="IT">IT</button>
+  <button class="filter-btn" data-category="Marketing">Marketing</button>
+  <button class="filter-btn" data-category="Healthcare">Healthcare</button>
+  <button class="filter-btn" data-category="Data">Data</button>
+</div>
+
+<!-- Jobs Grid (with your local images) -->
+<div class="jobs-grid" id="jobsGrid">
+  <div class="job-card" data-title="Software Engineer" data-location="Germany" data-company="TechCorp" data-category="IT">
+    <div class="job-image"><img src="job3.jfif" alt="Software Engineer"></div>
+    <div class="job-content">
+      <h3>Software Engineer</h3>
+      <p>Join our innovative tech team in Berlin and work on cutting-edge software solutions.</p>
+      <span class="tag">Germany</span>
+    </div>
+  </div>
+
+  <div class="job-card" data-title="Marketing Specialist" data-location="Canada" data-company="MarketX" data-category="Marketing">
+    <div class="job-image"><img src="job9.jfif" alt="Marketing Specialist"></div>
+    <div class="job-content">
+      <h3>Marketing Specialist</h3>
+      <p>Help shape global campaigns for our growing brand in Toronto.</p>
+      <span class="tag">Canada</span>
+    </div>
+  </div>
+
+  <div class="job-card" data-title="Nurse" data-location="Australia" data-company="HealthFirst" data-category="Healthcare">
+    <div class="job-image"><img src="job13.jfif" alt="Nurse"></div>
+    <div class="job-content">
+      <h3>Nurse</h3>
+      <p>Work with a compassionate healthcare team in Sydney, Australia.</p>
+      <span class="tag">Australia</span>
+    </div>
+  </div>
+
+  <div class="job-card" data-title="Data Analyst" data-location="USA" data-company="DataWise" data-category="Data">
+    <div class="job-image"><img src="job12.jfif" alt="Data Analyst"></div>
+    <div class="job-content">
+      <h3>Data Analyst</h3>
+      <p>Analyze large datasets to provide insights for major business decisions.</p>
+      <span class="tag">USA</span>
+    </div>
+  </div>
+
+  <div class="job-card" data-title="UI/UX Designer" data-location="UK" data-company="DesignPro" data-category="IT">
+    <div class="job-image"><img src="job15.jfif" alt="UI/UX Designer"></div>
+    <div class="job-content">
+      <h3>UI/UX Designer</h3>
+      <p>Design beautiful user experiences for web and mobile platforms.</p>
+      <span class="tag">UK</span>
+    </div>
+  </div>
+
+  <div class="job-card" data-title="Digital Marketing Manager" data-location="Singapore" data-company="AdSmart" data-category="Marketing">
+    <div class="job-image"><img src="job14.jfif" alt="Digital Marketing Manager"></div>
+    <div class="job-content">
+      <h3>Digital Marketing Manager</h3>
+      <p>Lead strategic campaigns across multiple channels for maximum reach.</p>
+      <span class="tag">Singapore</span>
+    </div>
+  </div>
+</div>
+
+<!-- New Auto-Sliding Job Image Grid -->
+<section class="jobs-section">
+  <h2>Opportunities</h2>
+  <div class="job-grid" id="jobSlider">
+    <div class="job-card"><img src="job6.jfif" alt="Job 7"></div>
+    <div class="job-card"><img src="job8.jfif" alt="Job 8"></div>
+    <div class="job-card"><img src="job9.jfif" alt="Job 9"></div>
+    <div class="job-card"><img src="job10.jfif" alt="Job 10"></div>
+    <div class="job-card"><img src="job11.jfif" alt="Job 11"></div>
+    <div class="job-card"><img src="job12.jfif" alt="Job 12"></div>
+  </div>
+</section>
+
+<!-- Pagination -->
+<div class="pagination" id="pagination"></div>
+
+<!-- Scripts -->
+<script src="script.js"></script>
+<script>
+  // Auto-scroll slider
+  const slider = document.getElementById('jobSlider');
+  let scrollAmount = 0;
+
+  function autoSlide() {
+    if (scrollAmount >= slider.scrollWidth - slider.clientWidth) {
+      scrollAmount = 0; // Reset to start
+    } else {
+      scrollAmount += 1; // Adjust speed (px per step)
+    }
+    slider.scrollTo({
+      left: scrollAmount,
+      behavior: 'smooth'
+    });
+  }
+
+  setInterval(autoSlide, 30); // Adjust speed (lower = faster)
+</script>
+</body>
+</html>
